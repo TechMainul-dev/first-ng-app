@@ -1,6 +1,15 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
+import {
+  Component,
+  Input,
+  booleanAttribute,
+  numberAttribute,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
+
+function formateName(value: string) {
+  return `Hi, ${value}`;
+}
 
 @Component({
   selector: 'app-user-profile',
@@ -10,7 +19,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './user-profile.component.css',
 })
 export class UserProfileComponent {
-  name = `Sadia`;
+  // @Input() name = '';
+  @Input({ alias: 'userName', transform: formateName }) name = '';
+  @Input({ transform: booleanAttribute }) isHidden!: boolean;
+  @Input({ transform: numberAttribute }) pin!: number;
+
+  // name = `Sadia`;
   status = `Married`;
   salary = 10000;
   isBtnDisabled = false;

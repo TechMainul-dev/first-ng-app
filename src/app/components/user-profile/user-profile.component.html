@@ -1,4 +1,4 @@
-<h4>{{name.toUpperCase() + ' '+ status +' '+ salary}}</h4>
+<h4>{{name.toUpperCase() + 'is'+ status +'}}</h4>
 
 <button [disabled]="isBtnDisabled">Click Me</button>
 
@@ -43,3 +43,6 @@
   <li *ngFor="let user of users">Name: {{user.name}}, Status: {{user.isSingle ? "Single" : "Married"}}, Salary:
     {{user.salary > 15000 ? user.salary : 'hidden' }}</li>
 </ol>
+
+
+<h1>{{name}} - hidden {{isHidden}} - pin {{pin}}</h1>
