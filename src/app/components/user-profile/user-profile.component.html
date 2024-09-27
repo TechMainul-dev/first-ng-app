@@ -1,5 +1,3 @@
-<p>user-profile works!</p>
-
 <h4>{{name.toUpperCase() + ' '+ status +' '+ salary}}</h4>
 
 <button [disabled]="isBtnDisabled">Click Me</button>
@@ -21,13 +19,27 @@
   }
 </ol>
 
-<!-- <ol>
-  <li *ngFor="let user of users; trackBy: trackByName">
-    <ng-container *ngIf="user.salary > 15000; else hiddenSalary">
-      Name: {{ user.name }}, Status: {{ user.isSingle ? 'Single' : 'Married' }}, Salary: {{ user.salary }}
+<ol>
+  <li *ngFor="let user of users;">
+    <ng-container *ngIf="user.salary > 25000; else elseIfCondition">
+      Name: {{ user.name }}, Status: {{ user.isSingle ? 'Single' : 'Married' }}, Salary: 25000+
     </ng-container>
+
+    <ng-template #elseIfCondition>
+      <ng-container *ngIf="user.salary > 15000; else hiddenSalary">
+        Name: {{ user.name }}, Status: {{ user.isSingle ? 'Single' : 'Married' }}, Salary: 15000+
+      </ng-container>
+    </ng-template>
+
+    <!-- Final else condition: hidden salary -->
     <ng-template #hiddenSalary>
       Name: {{ user.name }}, Status: {{ user.isSingle ? 'Single' : 'Married' }}, Salary: hidden
     </ng-template>
   </li>
-</ol> -->
+</ol>
+
+
+<ol>
+  <li *ngFor="let user of users">Name: {{user.name}}, Status: {{user.isSingle ? "Single" : "Married"}}, Salary:
+    {{user.salary > 15000 ? user.salary : 'hidden' }}</li>
+</ol>
