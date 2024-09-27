@@ -1,0 +1,33 @@
+<p>user-profile works!</p>
+
+<h4>{{name.toUpperCase() + ' '+ status +' '+ salary}}</h4>
+
+<button [disabled]="isBtnDisabled">Click Me</button>
+
+<h2>input value - <span style="color: red">{{inputVal}}</span></h2>
+<!-- <input type="text" [value]="inputVal" (input)="onInput($event)"> -->
+
+<input type="text" [(ngModel)]="inputVal">
+
+<ol>
+  @for(user of users;track user.name) {
+  @if(user.salary > 15000){
+
+  <li>Name: {{user.name}}, Status: {{user.isSingle ? "Single" : "Married"}}, Salary: {{user.salary}}</li>
+  }@else {
+
+  <li>Name: {{user.name}}, Status: {{user.isSingle ? "Single" : "Married"}}, Salary: hidden</li>
+  }
+  }
+</ol>
+
+<!-- <ol>
+  <li *ngFor="let user of users; trackBy: trackByName">
+    <ng-container *ngIf="user.salary > 15000; else hiddenSalary">
+      Name: {{ user.name }}, Status: {{ user.isSingle ? 'Single' : 'Married' }}, Salary: {{ user.salary }}
+    </ng-container>
+    <ng-template #hiddenSalary>
+      Name: {{ user.name }}, Status: {{ user.isSingle ? 'Single' : 'Married' }}, Salary: hidden
+    </ng-template>
+  </li>
+</ol> -->
