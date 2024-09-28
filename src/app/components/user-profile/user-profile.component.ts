@@ -31,7 +31,7 @@ export class UserProfileComponent {
   inputVal = 'test';
 
   users = [
-    { name: 'Mainul', isSingle: false, salary: 10000 },
+    { name: 'Mainul', isSingle: false, salary: 50000 },
     { name: 'Hasan', isSingle: false, salary: 20000 },
     { name: 'Khan', isSingle: false, salary: 30000 },
   ];
