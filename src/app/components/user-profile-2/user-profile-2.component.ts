@@ -9,20 +9,34 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './user-profile-2.component.css',
 })
 export class UserProfile2Component {
-  name = 'Mainul Hasan Khan';
-  status = 'Married';
-  pin = 423;
-  isBtnDisabled = false;
-  inputVal = 'sample value';
+  name = 'Sadia';
+  status = 'married';
+  gender = 'female';
+
+  isDisabled = true;
+  inputValue = '';
+  clickValue: number = 0;
+
+  onInput(e: Event) {
+    const value = (e.target as HTMLInputElement).value;
+    this.inputValue = value;
+    this.updateButtonState();
+  }
+
+  onClick(e: Event) {
+    this.clickValue = +this.inputValue * 2;
+    this.inputValue = this.clickValue.toString();
+    console.clear();
+    console.log(this.inputValue);
+    this.updateButtonState();
+  }
+
+  updateButtonState() {
+    this.isDisabled = +this.inputValue !== 10;
+  }
 
   users = [
-    { name: 'Mainul', status: 'Married', pin: 423 },
-    { name: 'Raj', status: 'Married', pin: 3423 },
+    { name: 'ahnaf', gender: 'male' },
+    { name: 'mariyam', gender: 'female' },
   ];
-
-  onChange(e: Event) {
-    const value = (e.target as HTMLInputElement).value;
-    console.log(value);
-    this.inputVal = value;
-  }
 }

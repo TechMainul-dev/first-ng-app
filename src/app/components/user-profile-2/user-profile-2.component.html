@@ -1,25 +1,16 @@
-<h1>This is user profile 2!</h1>
-<p>
-  My name is <b>{{name}}</b>
-  and i am <b>{{status}}</b>.
-  My pin is <b>{{pin}}</b>
-</p>
-
-<button class="btn" [disabled]="isBtnDisabled">Click me</button>
+<p>User name is <b>{{name}}</b> and <b>{{gender == 'male' ? 'he' : 'she'}} is {{status}}</b></p>
 
 
-<h2>You typed -
-  <span>{{inputVal}}</span>
-</h2>
-<!-- <input type="text" [value]="inputVal" (input)="onChange($event)"> -->
-<input type="text" [(ngModel)]="inputVal">
+<h2>You type :<span>{{ inputValue || clickValue }}</span></h2>
 
-<div>
-  @for(user of users;track user.name) {
-  <p>
-    Name is <b>{{user.name}}</b>
-    and i am <b>{{user.status}}</b>.
-    and pin is <b>{{user.pin}}</b>
-  </p>
+<input type="text" [value]="inputValue" (input)="onInput($event)">
+<br>
+<br>
+<button href="" class="btn" [disabled]="isDisabled" (click)="onClick($event)">Click me</button>
+
+
+<ol>
+  @for(user of users;track user.name; let i = $index) {
+  <li> User <b>{{i + 1}}</b> name is <b>{{user.name}}</b> and gender is <b>{{user.gender}}</b></li>
   }
-</div>
+</ol>

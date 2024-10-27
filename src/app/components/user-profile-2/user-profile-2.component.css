@@ -1,3 +1,6 @@
+* {
+  font-size: 18px;
+}
 h1 {
   color: rebeccapurple;
 }
@@ -13,11 +16,9 @@ h2 {
 input {
   border-color: blue;
   padding: 5px 10px;
-  font-size: 18px;
 }
 
 .btn {
-  font-size: 18px;
   padding: 8px 20px;
   border-radius: 25px;
   cursor: pointer;
@@ -26,4 +27,8 @@ input {
   &:hover {
     box-shadow: rgba(66, 46, 180, 0.527) 0px 10px 50px 0px;
   }
+}
+
+li > b {
+  color: rgb(180, 17, 17);
 }
