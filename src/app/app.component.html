@@ -1,4 +1,4 @@
-<app-user-profile userName="Mainul" isHidden="true" pin="423"></app-user-profile>
-<app-user-profile userName="Sadia" isHidden="false" pin="100"></app-user-profile>
-<app-user-profile userName="Ahnaf" isHidden="true" pin="101"></app-user-profile>
+<app-user-profile *ngFor="let u of users" [userName]="u.name" [isHidden]="u.isHidden" [pin]="u.pin">
+</app-user-profile>
+
 <!-- <app-user-profile-2></app-user-profile-2> -->
