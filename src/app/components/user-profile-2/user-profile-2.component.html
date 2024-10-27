@@ -9,8 +9,11 @@
 <button href="" class="btn" [disabled]="isDisabled" (click)="onClick($event)">Click me</button>
 
 
-<ol>
+<!-- <ol>
   @for(user of users;track user.name; let i = $index) {
-  <li> User <b>{{i + 1}}</b> name is <b>{{user.name}}</b> and gender is <b>{{user.gender}}</b></li>
+    <li> User <b>{{i + 1}}</b> name is <b>{{user.name}}</b> and gender is <b>{{user.gender}}</b></li>
   }
+</ol> -->
+<ol>
+  <li *ngFor="let user of users; let i = index"> User <b>{{i + 1}}</b> name is <b>{{user.name}}</b> and gender is <b>{{user.gender}}</b></li>
 </ol>
