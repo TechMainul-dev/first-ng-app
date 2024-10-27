@@ -41,7 +41,7 @@
 <ol>
   <li *ngFor="let user of users">Name: {{user.name}}, Status: {{user.isSingle ? "Single" : "Married"}}, Salary:
     {{user.salary > 15000 ? user.salary : 'hidden' }}</li>
-</ol>
+</ol> -->
 
 
-<h1>{{name}} - hidden {{isHidden}} - pin {{pin}}</h1> -->
+<h1 [ngStyle]="{ 'color': isHidden == true ? 'red' : 'blue' }">{{name}} - hidden {{isHidden}} - pin {{pin}}</h1>
