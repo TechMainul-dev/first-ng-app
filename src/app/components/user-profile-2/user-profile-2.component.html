@@ -1,12 +1,13 @@
 <p>User name is <b>{{name}}</b> and <b>{{gender == 'male' ? 'he' : 'she'}} is {{status}}</b></p>
 
 
-<h2>You type :<span>{{ inputValue || clickValue }}</span></h2>
+<h2>Output Value :<span>{{ clickValue|| inputValue }}</span></h2>
 
-<input type="text" [value]="inputValue" (input)="onInput($event)">
+<!-- <input type="text" [value]="inputValue" (input)="onInput($event)"> -->
+<input type="text" [(ngModel)]="inputValue">
 <br>
 <br>
-<button href="" class="btn" [disabled]="isDisabled" (click)="onClick($event)">Click me</button>
+<button class="btn" [disabled]="+inputValue !== 10" (click)="onClick()">Click me</button>
 
 
 <!-- <ol>

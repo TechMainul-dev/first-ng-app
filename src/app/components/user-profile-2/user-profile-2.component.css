@@ -26,6 +26,10 @@ input {
 
   &:hover {
     box-shadow: rgba(66, 46, 180, 0.527) 0px 10px 50px 0px;
+
+    &[disabled] {
+      box-shadow: rgba(182, 176, 176, 0.527) 0px 10px 50px 0px;
+    }
   }
 }
 

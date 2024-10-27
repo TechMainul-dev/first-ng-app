@@ -18,15 +18,15 @@ export class UserProfile2Component {
   inputValue = '';
   clickValue: string = '';
 
-  onInput(e: Event) {
-    const value = (e.target as HTMLInputElement).value;
-    this.inputValue = value;
-    this.updateButtonState();
-  }
+  // onInput(e: Event) {
+  //   const value = (e.target as HTMLInputElement).value;
+  //   this.inputValue = value;
+  //   this.updateButtonState();
+  // }
 
-  onClick(e: Event) {
-    this.clickValue = 'square : ' + +this.inputValue * 2;
-    this.inputValue = this.clickValue.toString();
+  onClick() {
+    this.clickValue = '(square) ' + +this.inputValue * 2;
+    this.inputValue = (+this.inputValue * 2).toString();
     console.clear();
     console.log(this.inputValue);
     this.updateButtonState();
