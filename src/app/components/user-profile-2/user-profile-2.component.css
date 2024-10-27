@@ -1,0 +1,29 @@
+h1 {
+  color: rebeccapurple;
+}
+
+h2 {
+  color: royalblue;
+
+  span {
+    color: blue;
+  }
+}
+
+input {
+  border-color: blue;
+  padding: 5px 10px;
+  font-size: 18px;
+}
+
+.btn {
+  font-size: 18px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: 0.4s;
+
+  &:hover {
+    box-shadow: rgba(66, 46, 180, 0.527) 0px 10px 50px 0px;
+  }
+}

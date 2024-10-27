@@ -1,0 +1,25 @@
+<h1>This is user profile 2!</h1>
+<p>
+  My name is <b>{{name}}</b>
+  and i am <b>{{status}}</b>.
+  My pin is <b>{{pin}}</b>
+</p>
+
+<button class="btn" [disabled]="isBtnDisabled">Click me</button>
+
+
+<h2>You typed -
+  <span>{{inputVal}}</span>
+</h2>
+<!-- <input type="text" [value]="inputVal" (input)="onChange($event)"> -->
+<input type="text" [(ngModel)]="inputVal">
+
+<div>
+  @for(user of users;track user.name) {
+  <p>
+    Name is <b>{{user.name}}</b>
+    and i am <b>{{user.status}}</b>.
+    and pin is <b>{{user.pin}}</b>
+  </p>
+  }
+</div>
