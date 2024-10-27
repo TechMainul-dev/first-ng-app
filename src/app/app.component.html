@@ -1,4 +1,5 @@
-<app-user-profile *ngFor="let u of users" [userName]="u.name" [isHidden]="u.isHidden" [pin]="u.pin">
+<app-user-profile *ngFor="let u of users" [userName]="u.name" [isHidden]="u.isHidden" [pin]="u.pin"
+  (myEvent)="receiveData($event)">
 </app-user-profile>
 
 <!-- <app-user-profile-2></app-user-profile-2> -->

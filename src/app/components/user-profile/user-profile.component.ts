@@ -1,11 +1,14 @@
 import { CommonModule } from '@angular/common';
 import {
   Component,
+  EventEmitter,
   Input,
+  Output,
   booleanAttribute,
   numberAttribute,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
+import { User } from '../../../models/user';
 
 function formateName(value: string) {
   return `Hi, ${value}`;
@@ -21,9 +24,15 @@ function formateName(value: string) {
 export class UserProfileComponent {
   // @Input() name = '';
 
-  @Input({ alias: 'userName', transform: formateName }) name = '';
+  @Input({ alias: 'userName' }) name = '';
   @Input({ transform: booleanAttribute }) isHidden: boolean = false;
   @Input({ transform: numberAttribute }) pin!: number;
+
+  @Output() myEvent = new EventEmitter<User>();
+
+  sendData() {
+    this.myEvent.emit({ name: this.name, newPin: 500 });
+  }
 
   // // name = `Sadia`;
   // status = `Married`;
