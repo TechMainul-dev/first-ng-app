@@ -16,7 +16,7 @@ export class UserProfile2Component {
 
   isDisabled = true;
   inputValue = '';
-  clickValue: number = 0;
+  clickValue: string = '';
 
   onInput(e: Event) {
     const value = (e.target as HTMLInputElement).value;
@@ -25,7 +25,7 @@ export class UserProfile2Component {
   }
 
   onClick(e: Event) {
-    this.clickValue = +this.inputValue * 2;
+    this.clickValue = 'square : ' + +this.inputValue * 2;
     this.inputValue = this.clickValue.toString();
     console.clear();
     console.log(this.inputValue);
@@ -39,5 +39,7 @@ export class UserProfile2Component {
   users = [
     { name: 'ahnaf', gender: 'male' },
     { name: 'mariyam', gender: 'female' },
+    { name: 'Mainul', gender: 'male' },
+    { name: 'sadia', gender: 'female' },
   ];
 }

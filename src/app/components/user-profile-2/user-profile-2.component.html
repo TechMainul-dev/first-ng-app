@@ -15,5 +15,12 @@
   }
 </ol> -->
 <ol>
-  <li *ngFor="let user of users; let i = index"> User <b>{{i + 1}}</b> name is <b>{{user.name}}</b> and gender is <b>{{user.gender}}</b></li>
+  <li *ngFor="let user of users; let i = index">
+    <ng-container *ngIf="user.gender === 'male'; else hiddenCharacter">
+      User <b>{{ i + 1 }}</b> name is <b>{{ user.name.toUpperCase() }}</b> and gender is <b>{{ user.gender }}</b>
+    </ng-container>
+    <ng-template #hiddenCharacter>
+      User <b>{{ i + 1 }}</b> is <b>hidden character</b>
+    </ng-template>
+  </li>
 </ol>
